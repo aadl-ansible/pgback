@@ -1,5 +1,6 @@
 ---
 pgback_version: '1.8'
+pgback_download_url: "https://raw.githubusercontent.com/orgrim/pg_back/v{{ pgback_version }}/pg_back"
 
 pgback_install_directory: '/usr/bin'
 pgback_backup_directory: '/var/backups/postgresql'
