@@ -1,4 +1,6 @@
 ---
+pgback_version: '1.8'
+
 pgback_install_directory: '/usr/bin'
 pgback_backup_directory: '/var/backups/postgresql'
 pgback_timestamp: '%Y-%m-%d_%H-%M-%S'
