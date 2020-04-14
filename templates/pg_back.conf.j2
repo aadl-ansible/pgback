@@ -1,0 +1,48 @@
+# Configuration file for pg_back
+
+# PostgreSQL binaries path. Leave empty to search $PATH
+PGBK_BIN={{ pgback_install_directory }}/pg_back
+
+# Backup directory
+PGBK_BACKUP_DIR={{ pgback_backup_directory }}
+
+# The timestamp to add at the end of each dump file
+PGBK_TIMESTAMP={{ pgback_timestamp }}
+
+# The time limit for old backups, in days
+PGBK_PURGE={{ pgback_purge_days }}
+
+# The minimum number of backups to keep when purging or 'all' to keep
+# everything (e.g. disable the purge)
+PGBK_PURGE_MIN_KEEP={{ pgback_minimum_keep }}
+
+# Command-line options for pg_dump
+# (Beware: on v11 and above, with "-Fp", you probably want to add "--create")
+# When using multiple options, use an array and quote each option.
+# Example: PGBK_OPTS=("-Fc" "-T" "tmp*")
+PGBK_OPTS=("{{ pgback_pgdump_options }}")
+
+# List of databases to dump (separator is space)
+# If empty, dump all databases which are not templates
+PGBK_DBLIST="{{ pgback_databases }}"
+
+# Exclude databases (separator is space)
+PGBK_EXCLUDE="{{ pgback_exclude_databases }}"
+
+# Include templates ("yes" or "no")
+PGBK_WITH_TEMPLATES="{{ pgback_include_templates }}"
+
+# Time in seconds, before abort the attempt to pausing replication in case of
+# long active blocking query. Prevent multiple executions of pg_back on daily routine.
+PGBK_STANDBY_PAUSE_TIMEOUT={{ pgback_standby_pause_timeout }}
+
+# Connection options
+PGBK_HOSTNAME={{ pgback_hostname }}
+PGBK_PORT={{ pgback_port }}
+PGBK_USERNAME={{ pgback_username }}
+PGBK_CONNDB={{ pgback_connection_database }}
+
+# Hooks.
+# Post-backup command should always be executed.
+PGBK_PRE_BACKUP_COMMAND={{ pgback_pre_command }}
+PGBK_POST_BACKUP_COMMAND={{ pgback_post_command }}

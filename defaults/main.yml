@@ -1,2 +1,19 @@
 ---
-# defaults file for pgback
+pgback_install_directory: '/usr/bin'
+pgback_backup_directory: '/var/backups/postgresql'
+pgback_timestamp: '%Y-%m-%d_%H-%M-%S'
+pgback_purge_days: 30
+pgback_minimum_keep: 0
+pgback_pgdump_options: '-Fc'
+pgback_databases:
+pgback_exclude_databases:
+pgback_include_templates: 'no'
+pgback_standby_pause_timeout: 3600
+
+pgback_host:
+pgback_port:
+pgback_username:
+pgback_connection_database: 'postgres'
+
+pgback_pre_command:
+pgback_post_command:
