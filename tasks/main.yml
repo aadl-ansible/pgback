@@ -1,2 +1,13 @@
 ---
-# tasks file for pgback
+- name: Create global configuration directory
+  file:
+    path: /etc/pg_back
+    state: directory
+    owner: postgres
+    group: postgres
+- name: Copy over pg_back global config
+  template:
+    src: pg_back.conf.j2
+    dest: /etc/pg_back/pg_back.conf
+    owner: postgres
+    group: postgres

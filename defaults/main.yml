@@ -13,7 +13,7 @@ pgback_exclude_databases:
 pgback_include_templates: 'no'
 pgback_standby_pause_timeout: 3600
 
-pgback_host:
+pgback_hostname:
 pgback_port:
 pgback_username:
 pgback_connection_database: 'postgres'

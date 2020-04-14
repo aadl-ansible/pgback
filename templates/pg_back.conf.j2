@@ -7,7 +7,7 @@ PGBK_BIN={{ pgback_install_directory }}/pg_back
 PGBK_BACKUP_DIR={{ pgback_backup_directory }}
 
 # The timestamp to add at the end of each dump file
-PGBK_TIMESTAMP={{ pgback_timestamp }}
+PGBK_TIMESTAMP='{{ pgback_timestamp }}'
 
 # The time limit for old backups, in days
 PGBK_PURGE={{ pgback_purge_days }}
