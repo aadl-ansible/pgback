@@ -6,7 +6,9 @@ driver:
 platforms:
   - name: instance
     image: postgres:10-alpine
-    pre_build_image: true
+    override_command: false
+    env:
+      POSTGRES_HOST_AUTH_METHOD: trust
 provisioner:
   name: ansible
 verifier:
