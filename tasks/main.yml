@@ -11,3 +11,8 @@
     dest: /etc/pg_back/pg_back.conf
     owner: postgres
     group: postgres
+- name: Download the pg_back script and install it
+  get_url:
+    url: "{{ pgback_download_url }}"
+    dest: "{{ pgback_install_directory }}/pg_back"
+    mode: 'u=rwx,g=rx,o=rx'
